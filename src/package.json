@@ -1,0 +1,35 @@
+{
+  "name": "tiny-hack-msteams",
+  "version": "1.0.0",
+  "description": "Tiny hack for Microsoft Teams",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dzeyelid/tiny-hack-msteams.git"
+  },
+  "keywords": [
+    "Microsoft Teams",
+    "Microsoft Graph",
+    "MSAL.js"
+  ],
+  "author": "Kazumi OHIRA <dzeyelid@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dzeyelid/tiny-hack-msteams/issues"
+  },
+  "homepage": "https://github.com/dzeyelid/tiny-hack-msteams#readme",
+  "dependencies": {
+    "nuxt": "^2.14.1"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.14.1",
+    "@nuxt/typescript-build": "^2.0.2",
+    "@nuxtjs/eslint-config-typescript": "^3.0.0"
+  }
+}
