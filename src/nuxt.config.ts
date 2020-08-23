@@ -19,26 +19,26 @@ export default {
     extend(config: BuildExtendConfig, ctx: BuildExtendCtx) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
-          enforce: "pre",
+          enforce: 'pre',
           test: /\.(ts|js|vue)$/,
-          loader: "eslint-loader",
+          loader: 'eslint-loader',
           exclude: /(node_modules)/,
         })
       }
     },
   },
   buildModules: [
-    "@nuxtjs/eslint-module",
-    "@nuxt/typescript-build",
-    "@nuxtjs/vuetify",
+    '@nuxtjs/eslint-module',
+    '@nuxt/typescript-build',
+    '@nuxtjs/vuetify',
   ],
-  plugins: ["@/plugins/vuetify.ts"],
-  mode: "spa",
-  target: "static",
+  plugins: ['@/plugins/auth.ts', '@/plugins/vuetify.ts'],
+  mode: 'spa',
+  target: 'static',
   typescript: {
     typeCheck: {
       eslint: {
-        files: "./**/*.{ts,js,vue}",
+        files: './**/*.{ts,js,vue}',
       },
     },
   },

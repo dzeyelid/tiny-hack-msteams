@@ -17,8 +17,8 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue"
-import * as msal from "@azure/msal-browser"
+import Vue from 'vue'
+import * as msal from '@azure/msal-browser'
 
 const msalConfig: msal.Configuration = {
   auth: {
@@ -29,12 +29,12 @@ const msalConfig: msal.Configuration = {
 }
 
 const scopes = [
-  "openid",
-  "profile",
-  "user.read",
-  "ChannelMessage.Read.All",
-  "Group.Read.All",
-  "Group.ReadWrite.All",
+  'openid',
+  'profile',
+  'user.read',
+  'ChannelMessage.Read.All',
+  'Group.Read.All',
+  'Group.ReadWrite.All',
 ]
 
 const msalInstance = new msal.PublicClientApplication(msalConfig)
@@ -48,7 +48,7 @@ export default Vue.extend({
   },
   methods: {
     async signin() {
-      console.log("Processing signin")
+      console.log('Processing signin')
       try {
         const loginResponse = await msalInstance.loginPopup({
           scopes,
