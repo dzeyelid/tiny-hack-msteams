@@ -10,12 +10,20 @@
             <v-list-item-title>Chats</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item link>
+        <v-list-item v-if="!isSignedIn" link @click="signin">
           <v-list-item-action>
             <font-awesome-icon :icon="['fas', 'user']" />
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title>Login</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item v-if="isSignedIn" link @click="signout">
+          <v-list-item-action>
+            <font-awesome-icon :icon="['fas', 'user']" />
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Logout</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -40,5 +48,20 @@ export default Vue.extend({
   data: () => ({
     drawer: null,
   }),
+
+  computed: {
+    isSignedIn(): boolean {
+      return this.$accessor.auth.isSignedIn
+    },
+  },
+
+  methods: {
+    async signin() {
+      await this.$accessor.auth.signIn()
+    },
+    async signout() {
+      await this.$accessor.auth.signOut()
+    },
+  },
 })
 </script>

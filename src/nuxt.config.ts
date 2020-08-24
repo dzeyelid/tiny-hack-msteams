@@ -26,11 +26,16 @@ export default {
         })
       }
     },
+    transpile: [
+      /typed-vuex/,
+    ],
   },
   buildModules: [
+    '@nuxtjs/dotenv',
     '@nuxtjs/eslint-module',
     '@nuxt/typescript-build',
     '@nuxtjs/vuetify',
+    'nuxt-typed-vuex',
   ],
   plugins: ['@/plugins/auth.ts', '@/plugins/vuetify.ts'],
   mode: 'spa',

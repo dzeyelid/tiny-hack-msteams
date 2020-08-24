@@ -14,34 +14,31 @@ const scopes = [
   'openid',
   'profile',
   'user.read',
-  'ChannelMessage.Read.All',
-  'Group.Read.All',
-  'Group.ReadWrite.All',
+  'channelmessage.read.all',
+  'group.read.all',
+  'group.ReadWrite.all',
 ]
 
 export class Auth implements AuthInterface {
   private _msalInstance: msal.PublicClientApplication
+  private _isSignedIn: boolean = false
 
   constructor() {
     this._msalInstance = new msal.PublicClientApplication(msalConfig)
   }
 
-  async signin() {
-    console.log('Processing signin')
-    try {
-      const loginResponse = await this._msalInstance.loginPopup({
-        scopes,
-      })
-      // this.signedIn = true
-      // this.authResult = loginResponse
-      console.log(loginResponse)
-    } catch (err) {
-      console.log(err)
-    }
+  public get isSignedIn() {
+    return this._isSignedIn
   }
 
-  async signout() {
-    await this._msalInstance.logout({})
+  public signIn() {
+    return this._msalInstance.loginPopup({
+      scopes,
+    })
+  }
+
+  public signOut() {
+    return this._msalInstance.logout({})
   }
 }
 

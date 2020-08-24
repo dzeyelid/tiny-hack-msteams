@@ -29,6 +29,7 @@
     "@azure/msal-browser": "^2.0.2",
     "@nuxt/typescript-runtime": "^1.0.0",
     "nuxt": "^2.14.1",
+    "nuxt-typed-vuex": "^0.1.20",
     "vuex": "^3.5.1"
   },
   "devDependencies": {
